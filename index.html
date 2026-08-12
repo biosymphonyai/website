@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BioSymphony</title>
-<meta name="description" content="A frontier lab for cell therapeutics.">
-<meta name="theme-color" content="#131211">
+<meta name="description" content="The frontier lab for cell therapeutics.">
+<meta name="theme-color" content="#10202F">
 <meta property="og:title" content="BioSymphony">
-<meta property="og:description" content="A frontier lab for cell therapeutics.">
+<meta property="og:description" content="The frontier lab for cell therapeutics.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://biosymphony.ai">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -28,11 +28,12 @@
   }
 
   :root {
-    --rest:  #131211;
-    --voice: #ECE9E2;
-    --score: #C9C4BA;
-    --sotto: #8B867C;
-    --gfp:   #38D996;
+    /* palette drawn from the Jan 2026 deck: navy #132536, golds #C49E66/#E4CC96, silver-blue #95A9CF */
+    --rest:  #10202F;
+    --voice: #E9EDF2;
+    --score: #B7C6D8;
+    --sotto: #7488A0;
+    --brass: #CBA46A;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -54,8 +55,8 @@
     text-rendering: optimizeLegibility;
   }
 
-  ::selection { background: var(--gfp); color: var(--rest); }
-  :focus-visible { outline: 1px solid var(--gfp); outline-offset: 4px; }
+  ::selection { background: var(--brass); color: var(--rest); }
+  :focus-visible { outline: 1px solid var(--brass); outline-offset: 4px; }
 
   canvas#field {
     position: fixed;
@@ -112,7 +113,7 @@
   }
 
   .contact a {
-    color: var(--gfp);
+    color: var(--brass);
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: border-color 0.18s ease;
@@ -121,7 +122,7 @@
     margin: -0.9375rem 0;
   }
 
-  .contact a:hover { border-bottom-color: var(--gfp); }
+  .contact a:hover { border-bottom-color: var(--brass); }
 
   footer {
     margin-top: auto;
@@ -143,8 +144,9 @@
   <h1>Learning the language of&nbsp;cells.</h1>
 
   <div class="manifesto">
-    <p>Cells are programmable. But no cell acts alone — a therapy is an orchestration of many cell types acting in coordination. We are building the models that learn this coordination, toward a world model of living systems: medicine that is composed, not discovered.</p>
-    <p>BioSymphony is a frontier lab for cell&nbsp;therapeutics.</p>
+    <p>Cells are programmable. But no cell acts alone — a therapy is an orchestration of many cell types acting in coordination.</p>
+    <p>We are building world models of living systems: models that learn this coordination, predict what cells will do next, and design the interventions that guide them. Medicine that is composed, not discovered.</p>
+    <p>BioSymphony is the frontier lab for cell&nbsp;therapeutics.</p>
   </div>
 
   <p class="contact">Join us — <a href="mailto:contact@biosymphony.ai">contact@biosymphony.ai</a></p>
@@ -158,8 +160,8 @@
   var ctx = canvas.getContext('2d');
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  var VOICE = '236, 233, 226';
-  var GFP = '56, 217, 150';
+  var SILVER = '149, 169, 207';
+  var GOLD = '228, 204, 150';
   var MARGIN = 40;
 
   var w, h, dpr, R, nodes, rafId = null, last = 0;
@@ -205,7 +207,7 @@
         var dx = n.x - m.x, dy = n.y - m.y;
         var d = Math.sqrt(dx * dx + dy * dy);
         if (d < R) {
-          ctx.strokeStyle = 'rgba(' + VOICE + ',' + ((1 - d / R) * 0.16).toFixed(3) + ')';
+          ctx.strokeStyle = 'rgba(' + SILVER + ',' + ((1 - d / R) * 0.16).toFixed(3) + ')';
           ctx.beginPath();
           ctx.moveTo(n.x, n.y);
           ctx.lineTo(m.x, m.y);
@@ -218,7 +220,7 @@
       n = nodes[i];
       var pulse = (Math.sin(t * 0.0008 + n.phase) + 1) / 2;
       var alpha = n.accent ? 0.38 + pulse * 0.2 : 0.3 + pulse * 0.14;
-      ctx.fillStyle = 'rgba(' + (n.accent ? GFP : VOICE) + ',' + alpha.toFixed(3) + ')';
+      ctx.fillStyle = 'rgba(' + (n.accent ? GOLD : SILVER) + ',' + alpha.toFixed(3) + ')';
       ctx.beginPath();
       ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
       ctx.fill();
