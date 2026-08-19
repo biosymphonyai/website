@@ -1,6 +1,6 @@
 # biosymphony.ai
 
-Stealth landing page for BioSymphony — a frontier lab building a world model of living systems. A single static page: no build step, no dependencies, no external requests.
+Stealth landing page for Biosymphony — a frontier lab building a world model of living systems. A single static page: no build step, no dependencies, no external requests.
 
 Preview locally:
 
