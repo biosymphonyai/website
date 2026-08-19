@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Biosymphony</title>
 <meta name="description" content="A frontier lab building a world model of living systems.">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111">
 <meta property="og:title" content="Biosymphony">
 <meta property="og:description" content="A frontier lab building a world model of living systems.">
 <meta property="og:type" content="website">
@@ -30,6 +31,16 @@
     --pink:    #E4569B;
     --magenta: #C13FD1;
     --coral:   #F1836B;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #111111;
+      --ink:   #F2F3F5;
+      --muted: #A9AFBC;
+      --faint: #767F90;
+      --blue:  #7D9AD6; /* deck blue lightened for contrast on ink */
+    }
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -166,11 +177,16 @@
   var canvas = document.getElementById('field');
   var ctx = canvas.getContext('2d');
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var dark = window.matchMedia('(prefers-color-scheme: dark)');
 
-  var SILVER = '147, 163, 201';
-  var BLUE = '51, 86, 159';
-  var PINK = '228, 86, 155';
   var MARGIN = 60;
+
+  function palette() {
+    return dark.matches
+      ? { staff: '147, 163, 201', staffA: 0.2, beamA: 0.18, note: '125, 154, 214', accent: '228, 86, 155' }
+      : { staff: '147, 163, 201', staffA: 0.33, beamA: 0.3, note: '51, 86, 159', accent: '228, 86, 155' };
+  }
+  var pal = palette();
 
   /* a drifting score: faint five-line staves, note heads with hairline
      stems (stem direction follows engraving convention), proximity lines
@@ -225,7 +241,7 @@
     ctx.clearRect(0, 0, w, h);
 
     ctx.lineWidth = 1;
-    ctx.strokeStyle = 'rgba(' + SILVER + ',0.33)';
+    ctx.strokeStyle = 'rgba(' + pal.staff + ',' + pal.staffA + ')';
     for (var s = 0; s < staves.length; s++) {
       for (var k = 0; k < STAVE_LINES; k++) {
         var ly = staves[s] + k * LINE_GAP + 0.5;
@@ -245,7 +261,7 @@
         var dx = n.x - m.x, dy = n.y - m.y;
         var d = Math.sqrt(dx * dx + dy * dy);
         if (d < R) {
-          ctx.strokeStyle = 'rgba(' + SILVER + ',' + ((1 - d / R) * 0.3).toFixed(3) + ')';
+          ctx.strokeStyle = 'rgba(' + pal.staff + ',' + ((1 - d / R) * pal.beamA).toFixed(3) + ')';
           ctx.beginPath();
           ctx.moveTo(n.x, n.y);
           ctx.lineTo(m.x, m.y);
@@ -258,7 +274,7 @@
       n = notes[i];
       var pulse = (Math.sin(t * 0.0008 + n.phase) + 1) / 2;
       var alpha = n.accent ? 0.45 + pulse * 0.2 : 0.32 + pulse * 0.15;
-      var tone = n.accent ? PINK : BLUE;
+      var tone = n.accent ? pal.accent : pal.note;
       var stemX = n.stemUp ? n.x + n.r * 1.15 : n.x - n.r * 1.15;
       var stemY = n.stemUp ? n.y - LINE_GAP * 1.7 : n.y + LINE_GAP * 1.7;
       ctx.strokeStyle = 'rgba(' + tone + ',' + (alpha * 0.45).toFixed(3) + ')';
@@ -315,6 +331,11 @@
 
   reduced.addEventListener('change', function () {
     if (reduced.matches) { stop(); draw(0); } else { start(); }
+  });
+
+  dark.addEventListener('change', function () {
+    pal = palette();
+    if (reduced.matches) draw(0);
   });
 
   document.addEventListener('visibilitychange', function () {
