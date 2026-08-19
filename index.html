@@ -162,9 +162,17 @@
 
   var SILVER = '149, 169, 207';
   var GOLD = '228, 204, 150';
-  var MARGIN = 40;
+  var MARGIN = 60;
 
-  var w, h, dpr, R, nodes, rafId = null, last = 0;
+  /* a drifting score: faint five-line staves, note heads with hairline
+     stems (stem direction follows engraving convention), proximity lines
+     between notes on the same stave read as beams */
+  var LINE_GAP = 16;
+  var STAVE_LINES = 5;
+  var STAVE_H = LINE_GAP * (STAVE_LINES - 1);
+  var STAVE_GAP = 130;
+
+  var w, h, dpr, R, staves, notes, rafId = null, last = 0;
 
   function build() {
     dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -175,39 +183,61 @@
     canvas.style.width = w + 'px';
     canvas.style.height = h + 'px';
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    R = Math.min(130, w * 0.14);
+    R = Math.min(140, w * 0.16);
 
-    var count = Math.min(72, Math.floor(w * h / 18000));
-    nodes = new Array(count);
+    var unit = STAVE_H + STAVE_GAP;
+    var rows = Math.max(2, Math.round((h - STAVE_GAP) / unit));
+    var totalH = rows * STAVE_H + (rows - 1) * STAVE_GAP;
+    staves = [];
+    for (var s = 0; s < rows; s++) staves.push((h - totalH) / 2 + s * unit);
+
+    var count = Math.min(56, Math.floor(w * h / 24000));
+    notes = new Array(count);
     for (var i = 0; i < count; i++) {
-      var speed = 0.04 + Math.random() * 0.08;
-      var dir = Math.random() * Math.PI * 2;
-      nodes[i] = {
-        x: Math.random() * w,
-        y: Math.random() * h,
-        vx: Math.cos(dir) * speed,
-        vy: Math.sin(dir) * speed,
-        r: 1.4 + Math.random() * 1.0,
-        phase: Math.random() * Math.PI * 2,
-        wander: Math.random() * Math.PI * 2,
-        accent: Math.random() < 0.12
-      };
+      notes[i] = spawn(Math.random() * (w + MARGIN * 2) - MARGIN);
     }
+  }
+
+  function spawn(x) {
+    var stave = Math.floor(Math.random() * staves.length);
+    var step = Math.floor(Math.random() * (STAVE_LINES * 2 - 1)); /* lines and spaces */
+    return {
+      stave: stave,
+      x: x,
+      y: staves[stave] + step * (LINE_GAP / 2),
+      stemUp: step >= STAVE_LINES - 1,
+      v: 0.12 + Math.random() * 0.22,
+      r: 2.0 + Math.random() * 1.0,
+      phase: Math.random() * Math.PI * 2,
+      accent: Math.random() < 0.12
+    };
   }
 
   function draw(t) {
     ctx.clearRect(0, 0, w, h);
 
-    var i, j, n, m;
     ctx.lineWidth = 1;
-    for (i = 0; i < nodes.length; i++) {
-      n = nodes[i];
-      for (j = i + 1; j < nodes.length; j++) {
-        m = nodes[j];
+    ctx.strokeStyle = 'rgba(' + SILVER + ',0.07)';
+    for (var s = 0; s < staves.length; s++) {
+      for (var k = 0; k < STAVE_LINES; k++) {
+        var ly = staves[s] + k * LINE_GAP + 0.5;
+        ctx.beginPath();
+        ctx.moveTo(0, ly);
+        ctx.lineTo(w, ly);
+        ctx.stroke();
+      }
+    }
+
+    var i, j, n, m;
+    for (i = 0; i < notes.length; i++) {
+      n = notes[i];
+      for (j = i + 1; j < notes.length; j++) {
+        m = notes[j];
+        if (m.stave !== n.stave) continue;
         var dx = n.x - m.x, dy = n.y - m.y;
         var d = Math.sqrt(dx * dx + dy * dy);
         if (d < R) {
-          ctx.strokeStyle = 'rgba(' + SILVER + ',' + ((1 - d / R) * 0.16).toFixed(3) + ')';
+          ctx.strokeStyle = 'rgba(' + SILVER + ',' + ((1 - d / R) * 0.15).toFixed(3) + ')';
           ctx.beginPath();
           ctx.moveTo(n.x, n.y);
           ctx.lineTo(m.x, m.y);
@@ -216,28 +246,34 @@
       }
     }
 
-    for (i = 0; i < nodes.length; i++) {
-      n = nodes[i];
+    for (i = 0; i < notes.length; i++) {
+      n = notes[i];
       var pulse = (Math.sin(t * 0.0008 + n.phase) + 1) / 2;
-      var alpha = n.accent ? 0.38 + pulse * 0.2 : 0.3 + pulse * 0.14;
-      ctx.fillStyle = 'rgba(' + (n.accent ? GOLD : SILVER) + ',' + alpha.toFixed(3) + ')';
+      var alpha = n.accent ? 0.4 + pulse * 0.2 : 0.3 + pulse * 0.15;
+      var tone = n.accent ? GOLD : SILVER;
+      var stemX = n.stemUp ? n.x + n.r * 1.15 : n.x - n.r * 1.15;
+      var stemY = n.stemUp ? n.y - LINE_GAP * 1.7 : n.y + LINE_GAP * 1.7;
+      ctx.strokeStyle = 'rgba(' + tone + ',' + (alpha * 0.45).toFixed(3) + ')';
       ctx.beginPath();
-      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.moveTo(stemX, n.y);
+      ctx.lineTo(stemX, stemY);
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(' + tone + ',' + alpha.toFixed(3) + ')';
+      ctx.save();
+      ctx.translate(n.x, n.y);
+      ctx.rotate(-0.32);
+      ctx.scale(1.35, 1);
+      ctx.beginPath();
+      ctx.arc(0, 0, n.r, 0, Math.PI * 2);
       ctx.fill();
+      ctx.restore();
     }
   }
 
   function step(t) {
-    var n;
-    for (var i = 0; i < nodes.length; i++) {
-      n = nodes[i];
-      n.wander += 0.002;
-      n.x += n.vx + Math.sin(n.wander) * 0.02;
-      n.y += n.vy + Math.cos(n.wander) * 0.02;
-      if (n.x < -MARGIN) n.x = w + MARGIN;
-      if (n.x > w + MARGIN) n.x = -MARGIN;
-      if (n.y < -MARGIN) n.y = h + MARGIN;
-      if (n.y > h + MARGIN) n.y = -MARGIN;
+    for (var i = 0; i < notes.length; i++) {
+      notes[i].x -= notes[i].v;
+      if (notes[i].x < -MARGIN) notes[i] = spawn(w + MARGIN);
     }
   }
 
