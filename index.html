@@ -183,10 +183,13 @@
 
   function palette() {
     return dark.matches
-      ? { staff: '147, 163, 201', staffA: 0.2, beamA: 0.18, note: '125, 154, 214', accent: '228, 86, 155' }
-      : { staff: '147, 163, 201', staffA: 0.33, beamA: 0.3, note: '51, 86, 159', accent: '228, 86, 155' };
+      ? { staff: '147, 163, 201', staffA: 0.2, beamA: 0.18, note: '125, 154, 214' }
+      : { staff: '147, 163, 201', staffA: 0.33, beamA: 0.3, note: '51, 86, 159' };
   }
   var pal = palette();
+
+  /* accent notes sample the brand gradient: coral, pink, magenta */
+  var GRADIENT = ['241, 131, 107', '228, 86, 155', '193, 63, 209'];
 
   /* a drifting score: faint five-line staves, note heads with hairline
      stems (stem direction follows engraving convention), proximity lines
@@ -233,7 +236,8 @@
       v: 0.12 + Math.random() * 0.22,
       r: 2.0 + Math.random() * 1.0,
       phase: Math.random() * Math.PI * 2,
-      accent: Math.random() < 0.12
+      accent: Math.random() < 0.3,
+      hue: GRADIENT[Math.floor(Math.random() * GRADIENT.length)]
     };
   }
 
@@ -274,7 +278,7 @@
       n = notes[i];
       var pulse = (Math.sin(t * 0.0008 + n.phase) + 1) / 2;
       var alpha = n.accent ? 0.45 + pulse * 0.2 : 0.32 + pulse * 0.15;
-      var tone = n.accent ? pal.accent : pal.note;
+      var tone = n.accent ? n.hue : pal.note;
       var stemX = n.stemUp ? n.x + n.r * 1.15 : n.x - n.r * 1.15;
       var stemY = n.stemUp ? n.y - LINE_GAP * 1.7 : n.y + LINE_GAP * 1.7;
       ctx.strokeStyle = 'rgba(' + tone + ',' + (alpha * 0.45).toFixed(3) + ')';
