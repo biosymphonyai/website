@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Cluster · BioSymphony design study 12</title>
+<meta name="description" content="BioSymphony design system study 12 — The Cluster (4a). One-page treatment of the virtual-tissue positioning.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#10142B">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/demo/demo.css">
+<style>
+  :root { --ink:#10142B; --ink-2:#191E3C; --fg:#F5F4F0; --fg-2:#93A3C9;
+    --accent:#E4569B; --accent-2:#6C5CE0; --rule:rgba(147,163,201,.2);
+    --display:'Space Grotesk',system-ui,sans-serif; --body:'Archivo',system-ui,sans-serif;
+    --dw:700; --dt:-.025em; --radius:4px; }
+  .brand .name{text-transform:uppercase;letter-spacing:.09em;font-size:.9375rem}
+    .grid4 .n{color:var(--accent)}
+    .row .k{color:var(--accent-2)}
+    .hero{background:linear-gradient(180deg,rgba(25,30,60,.9),transparent)}
+    .band{display:flex;gap:5px;margin-top:2.25rem}
+    .band i{width:12px;height:12px;border-radius:2px;display:block}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/demo/"><svg viewBox="0 0 63 122" width="20" height="38" aria-hidden="true"><rect x="4" y="101" width="14" height="14" rx="2" fill="#F1836B" opacity="0.73"/><rect x="4" y="84" width="14" height="14" rx="2" fill="#F1836B" opacity="1.00"/><rect x="23" y="101" width="14" height="14" rx="2" fill="#E4569B" opacity="0.63"/><rect x="23" y="84" width="14" height="14" rx="2" fill="#E4569B" opacity="0.82"/><rect x="23" y="67" width="14" height="14" rx="2" fill="#E4569B" opacity="1.00"/><rect x="42" y="101" width="14" height="14" rx="2" fill="#6C5CE0" opacity="0.59"/><rect x="42" y="84" width="14" height="14" rx="2" fill="#6C5CE0" opacity="0.73"/><rect x="42" y="67" width="14" height="14" rx="2" fill="#6C5CE0" opacity="0.86"/><rect x="42" y="50" width="14" height="14" rx="2" fill="#6C5CE0" opacity="1.00"/></svg><span class="name">BioSymphony</span></a>
+    <nav>
+      <a class="hide-sm" href="#thesis">Thesis</a>
+      <a class="hide-sm" href="#platform">Platform</a>
+      <a class="cta" href="mailto:contact@biosymphony.ai">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="ornament"><svg viewBox="0 0 120 122" width="190" height="193" aria-hidden="true"><rect x="4" y="101" width="14" height="14" rx="2" fill="#F1836B" opacity="0.73"/><rect x="4" y="84" width="14" height="14" rx="2" fill="#F1836B" opacity="1.00"/><rect x="23" y="101" width="14" height="14" rx="2" fill="#E4569B" opacity="0.63"/><rect x="23" y="84" width="14" height="14" rx="2" fill="#E4569B" opacity="0.82"/><rect x="23" y="67" width="14" height="14" rx="2" fill="#E4569B" opacity="1.00"/><rect x="42" y="101" width="14" height="14" rx="2" fill="#C13FD1" opacity="0.56"/><rect x="42" y="84" width="14" height="14" rx="2" fill="#C13FD1" opacity="0.67"/><rect x="42" y="67" width="14" height="14" rx="2" fill="#C13FD1" opacity="0.78"/><rect x="42" y="50" width="14" height="14" rx="2" fill="#C13FD1" opacity="0.89"/><rect x="42" y="33" width="14" height="14" rx="2" fill="#C13FD1" opacity="1.00"/><rect x="61" y="101" width="14" height="14" rx="2" fill="#6C5CE0" opacity="0.53"/><rect x="61" y="84" width="14" height="14" rx="2" fill="#6C5CE0" opacity="0.61"/><rect x="61" y="67" width="14" height="14" rx="2" fill="#6C5CE0" opacity="0.69"/><rect x="61" y="50" width="14" height="14" rx="2" fill="#6C5CE0" opacity="0.76"/><rect x="61" y="33" width="14" height="14" rx="2" fill="#6C5CE0" opacity="0.84"/><rect x="61" y="16" width="14" height="14" rx="2" fill="#6C5CE0" opacity="0.92"/><rect x="61" y="-1" width="14" height="14" rx="2" fill="#6C5CE0" opacity="1.00"/><rect x="80" y="101" width="14" height="14" rx="2" fill="#93A3C9" opacity="0.59"/><rect x="80" y="84" width="14" height="14" rx="2" fill="#93A3C9" opacity="0.73"/><rect x="80" y="67" width="14" height="14" rx="2" fill="#93A3C9" opacity="0.86"/><rect x="80" y="50" width="14" height="14" rx="2" fill="#93A3C9" opacity="1.00"/><rect x="99" y="101" width="14" height="14" rx="2" fill="#93A3C9" opacity="0.73"/><rect x="99" y="84" width="14" height="14" rx="2" fill="#93A3C9" opacity="1.00"/></svg></div>
+      <span class="mono eyebrow">Disease, in resolution</span>
+      <h1>Resolution is the whole game.</h1>
+      <p class="lede">Every important disagreement in this field reduces to resolution: how finely you can see, at which scale, under what intervention. Bulk gave way to single-cell; single-cell is giving way to spatial; spatial gives way to tissue dynamics. We are building for the next step, not the current one.</p>
+      <div class="band"><i style="background:#F1836B"></i><i style="background:#E4569B"></i><i style="background:#C13FD1"></i><i style="background:#6C5CE0"></i><i style="background:#93A3C9"></i></div>
+    </div>
+  </section>
+
+  <section class="thesis" id="thesis">
+    <div class="wrap">
+      <span class="mono eyebrow">The thesis</span>
+      <p>Each column is a voice. Each voxel is a cell, in a place, at a time.</p>
+      <p class="after">A simulation is only as useful as its smallest honest unit. We model tissue as a field of cells with position, state and coupling — high enough resolution that a perturbation has somewhere to propagate, coarse enough that it can be run often enough to learn from.</p>
+    </div>
+  </section>
+
+  <section id="platform">
+    <div class="wrap">
+      <span class="mono eyebrow">Four commitments</span>
+      <div class="grid4"><div><span class="n">01</span><h3>Multimodal</h3><p>Six channels, one latent state. Resolution in modality, not just in space.</p></div><div><span class="n">02</span><h3>Multi-scale</h3><p>Molecular, cellular, neighbourhood, tissue — four resolutions, one set of weights.</p></div><div><span class="n">03</span><h3>Causal</h3><p>Perturbation-conditioned, so the model predicts intervention outcomes rather than ranking correlations.</p></div><div><span class="n">04</span><h3>Mechanistic</h3><p>Pathway-level attribution on every call, because an unexplained prediction cannot be acted on.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="mono eyebrow">What we are building</span>
+      <div class="rows"><div class="row"><div class="k">Substrate</div><div><h3>The virtual tissue</h3><p>Cells as voxels of a simulation: position, state, coupling and time. Perturb it a thousand times for the cost of one experiment.</p></div></div><div class="row"><div class="k">Discovery</div><div><h3>Target discovery at depth</h3><p>Multi-omics target discovery read out of simulated tissue response, with the mechanism attached and the uncertainty stated.</p></div></div><div class="row"><div class="k">Compute</div><div><h3>Built to be run often</h3><p>The value comes from iteration count. Everything is designed around how many perturbations we can afford to simulate per day.</p></div></div></div>
+      
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Turn up the resolution.</h2>
+      <p>Computational tech-bio platform. Vancouver, British Columbia.</p>
+      <a class="mail link" href="mailto:contact@biosymphony.ai">contact@biosymphony.ai</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">&copy; 2026 BioSymphony · Vancouver, BC</span>
+    <a class="mono" href="/demo/" style="text-decoration:none">Design study 12 of 12</a>
+  </div>
+</footer>
+
+<div class="spec">
+  <div class="wrap">
+    <span class="tag">4a</span>
+    <span class="nm">The Cluster</span>
+    <span class="sw"><i style="background:#10142B"></i><i style="background:#E4569B"></i><i style="background:#6C5CE0"></i><i style="background:#93A3C9"></i><i style="background:#F5F4F0"></i></span>
+    <span class="meta">Space Grotesk · Archivo · Plex Mono</span>
+    <span class="meta">1A, PIXELS FORWARD</span>
+    <span class="nav"><a href="/demo/12">&larr; prev</a><a href="/demo/">all 12</a><a href="/demo/1">next &rarr;</a></span>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Score · BioSymphony design study 3</title>
+<meta name="description" content="BioSymphony design system study 3 — The Score (1b). One-page treatment of the virtual-tissue positioning.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#14284F">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/demo/demo.css">
+<style>
+  :root { --ink:#F5F3EE; --ink-2:#FFFFFF; --fg:#14284F; --fg-2:#5B6B85;
+    --accent:#B0463A; --accent-2:#1B3A73; --rule:rgba(20,40,79,.15);
+    --display:'Spectral',Georgia,serif; --body:'Archivo',system-ui,sans-serif;
+    --dw:400; --dt:-.012em; --dlh:1.14; --maxw:60rem; }
+  .brand .name{font-size:1.1875rem}
+    h1{font-size:clamp(2rem,5.4vw,3.4rem)}
+    .lede{font-family:var(--display);font-size:clamp(1.125rem,2vw,1.375rem);color:var(--fg);line-height:1.5}
+    .row .k{color:var(--accent-2)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/demo/"><svg viewBox="0 0 88 150" width="18" height="30" fill="none" aria-hidden="true">
+  <path d="M56 8C30 24 26 52 46 70c20 18 22 42 6 58-11 11-27 10-34-2" stroke="#1B3A73" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="46" cy="70" r="19" stroke="#92A6CC" stroke-width="8"/>
+  <path d="M22 126c-3-8 1-16 9-18" stroke="#92A6CC" stroke-width="8" stroke-linecap="round"/>
+</svg><span class="name">BioSymphony</span></a>
+    <nav>
+      <a class="hide-sm" href="#thesis">Thesis</a>
+      <a class="hide-sm" href="#platform">Platform</a>
+      <a class="cta" href="mailto:contact@biosymphony.ai">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="ornament"><svg viewBox="0 0 88 150" width="86" height="146" fill="none" aria-hidden="true">
+  <path d="M56 8C30 24 26 52 46 70c20 18 22 42 6 58-11 11-27 10-34-2" stroke="#1B3A73" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="46" cy="70" r="19" stroke="#92A6CC" stroke-width="8"/>
+  <path d="M22 126c-3-8 1-16 9-18" stroke="#92A6CC" stroke-width="8" stroke-linecap="round"/>
+</svg></div>
+      <span class="mono eyebrow">Computable biology</span>
+      <h1>The tissue is the unit of disease.</h1>
+      <p class="lede">A single-cell atlas tells you who is in the room. It does not tell you what the room is doing.</p>
+      
+    </div>
+  </section>
+
+  <section class="thesis" id="thesis">
+    <div class="wrap">
+      <span class="mono eyebrow">The thesis</span>
+      <p>We are writing the score, not cataloguing the players.</p>
+      <p class="after">Cell atlases were a necessary decade. They gave the field an inventory. But an inventory is not a mechanism, and a cell type is not a phenotype — the disease lives in the coordination between cells, in gradients and contacts and feedback that no per-cell embedding retains. BioSymphony models that coordination directly.</p>
+    </div>
+  </section>
+
+  <section id="platform">
+    <div class="wrap">
+      <span class="mono eyebrow">Four commitments</span>
+      <div class="grid4"><div><span class="n">i</span><h3>Multimodal</h3><p>Expression, protein, chromatin state and spatial position are different notations for one underlying system. We read them as one.</p></div><div><span class="n">ii</span><h3>Multi-scale</h3><p>From molecular interaction to cellular state to tissue architecture — a continuous model rather than three that hand off.</p></div><div><span class="n">iii</span><h3>Causal</h3><p>Built from perturbation data so that the model can be asked a counterfactual and give a defensible answer.</p></div><div><span class="n">iv</span><h3>Mechanistic</h3><p>Interpretability is not a feature we added. A prediction without a mechanism is not evidence.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="mono eyebrow">What we are building</span>
+      <div class="rows"><div class="row"><div class="k">Method</div><div><h3>Perturbation as the primary datum</h3><p>Observational omics describe a steady state. Perturbation data describes the system's response function — the only thing that generalises to a therapeutic intervention.</p></div></div><div class="row"><div class="k">Discovery</div><div><h3>Target discovery, in tissue</h3><p>We simulate the intervention in a modelled tissue and read out the phenotype. Targets that only work in dissociated cells are visible as such, early.</p></div></div><div class="row"><div class="k">Rigour</div><div><h3>Falsifiable by construction</h3><p>Every model release ships with the held-out perturbations it failed on. Progress is measured against that list.</p></div></div></div>
+      
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>For people who read the footnotes.</h2>
+      <p>BioSymphony is a computational tech-bio platform for target discovery. Vancouver, British Columbia.</p>
+      <a class="mail link" href="mailto:contact@biosymphony.ai">contact@biosymphony.ai</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">&copy; 2026 BioSymphony · Vancouver, BC</span>
+    <a class="mono" href="/demo/" style="text-decoration:none">Design study 3 of 12</a>
+  </div>
+</footer>
+
+<div class="spec">
+  <div class="wrap">
+    <span class="tag">1b</span>
+    <span class="nm">The Score</span>
+    <span class="sw"><i style="background:#14284F"></i><i style="background:#1B3A73"></i><i style="background:#92A6CC"></i><i style="background:#F5F3EE"></i><i style="background:#B0463A"></i></span>
+    <span class="meta">Spectral · Archivo · Plex Mono</span>
+    <span class="meta">REFINE THE CLEF</span>
+    <span class="nav"><a href="/demo/3">&larr; prev</a><a href="/demo/">all 12</a><a href="/demo/4">next &rarr;</a></span>
+  </div>
+</div>
+</body>
+</html>

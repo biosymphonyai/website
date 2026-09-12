@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Stave · BioSymphony design study 5</title>
+<meta name="description" content="BioSymphony design system study 5 — The Stave (1d). One-page treatment of the virtual-tissue positioning.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1E2A2B">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/demo/demo.css">
+<style>
+  :root { --ink:#FAF7F1; --ink-2:#FFFFFF; --fg:#1E2A2B; --fg-2:#5F6E6C;
+    --accent:#D9A441; --accent-2:#135E5A; --rule:rgba(30,42,43,.15);
+    --display:'Newsreader',Georgia,serif; --body:'Archivo',system-ui,sans-serif;
+    --dw:400; --dt:-.015em; --dlh:1.12; --maxw:62rem; }
+  .brand .name{font-size:1.1875rem}
+    .brand .name em{font-style:italic;color:var(--accent-2)}
+    h1 em{font-style:italic;color:var(--accent-2)}
+    .grid4 .n{color:var(--accent-2)}
+    .row .k{color:var(--accent-2)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/demo/"><svg viewBox="0 0 280 92" width="26" height="8" fill="none" aria-hidden="true">
+  <line x1="4" y1="14" x2="276" y2="14" stroke="#1E2A2B" stroke-width="1.5"/><line x1="4" y1="30" x2="276" y2="30" stroke="#1E2A2B" stroke-width="1.5"/><line x1="4" y1="46" x2="276" y2="46" stroke="#1E2A2B" stroke-width="1.5"/><line x1="4" y1="62" x2="276" y2="62" stroke="#1E2A2B" stroke-width="1.5"/><line x1="4" y1="78" x2="276" y2="78" stroke="#1E2A2B" stroke-width="1.5"/>
+  <circle cx="58" cy="78" r="11" fill="#135E5A"/><circle cx="58" cy="78" r="4.5" fill="#1E2A2B" fill-opacity=".001"/>
+  <circle cx="118" cy="62" r="13" fill="#7FA8A0"/>
+  <circle cx="186" cy="46" r="15" fill="#135E5A"/>
+  <circle cx="244" cy="22" r="17" fill="#D9A441"/>
+</svg><span class="name">Bio<em>symphony</em></span></a>
+    <nav>
+      <a class="hide-sm" href="#thesis">Thesis</a>
+      <a class="hide-sm" href="#platform">Platform</a>
+      <a class="cta" href="mailto:contact@biosymphony.ai">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="ornament"><svg viewBox="0 0 280 92" width="280" height="92" fill="none" aria-hidden="true">
+  <line x1="4" y1="14" x2="276" y2="14" stroke="rgba(30,42,43,.25)" stroke-width="1.5"/><line x1="4" y1="30" x2="276" y2="30" stroke="rgba(30,42,43,.25)" stroke-width="1.5"/><line x1="4" y1="46" x2="276" y2="46" stroke="rgba(30,42,43,.25)" stroke-width="1.5"/><line x1="4" y1="62" x2="276" y2="62" stroke="rgba(30,42,43,.25)" stroke-width="1.5"/><line x1="4" y1="78" x2="276" y2="78" stroke="rgba(30,42,43,.25)" stroke-width="1.5"/>
+  <circle cx="58" cy="78" r="11" fill="#135E5A"/><circle cx="58" cy="78" r="4.5" fill="rgba(30,42,43,.25)" fill-opacity=".001"/>
+  <circle cx="118" cy="62" r="13" fill="#7FA8A0"/>
+  <circle cx="186" cy="46" r="15" fill="#135E5A"/>
+  <circle cx="244" cy="22" r="17" fill="#D9A441"/>
+</svg></div>
+      <span class="mono eyebrow">Disease, rewritten</span>
+      <h1>Write it down, and you can <em>rewrite</em> it.</h1>
+      <p class="lede">Notation was the technology that let music become cumulative — a thing you could hand to a stranger and have them reproduce it exactly. Biology still mostly lacks that. We are building the notation for tissue behaviour, and then the means to edit it.</p>
+      
+    </div>
+  </section>
+
+  <section class="thesis" id="thesis">
+    <div class="wrap">
+      <span class="mono eyebrow">The thesis</span>
+      <p>A cell is a note. A tissue is the passage. Disease is the passage played wrong.</p>
+      <p class="after">This is a metaphor doing real work. Notes only mean something in sequence and in company: the same pitch is consonant or dissonant depending on what surrounds it. Cells are identical in this respect — which is why models that score cells in isolation keep producing targets that evaporate in vivo.</p>
+    </div>
+  </section>
+
+  <section id="platform">
+    <div class="wrap">
+      <span class="mono eyebrow">Four commitments</span>
+      <div class="grid4"><div><span class="n">01</span><h3>Multimodal</h3><p>Transcript, protein, chromatin and spatial context are four staves of the same score. Read together or not at all.</p></div><div><span class="n">02</span><h3>Multi-scale</h3><p>Phrase, passage, movement. Molecular change has to be legible as tissue behaviour or it has not been modelled.</p></div><div><span class="n">03</span><h3>Causal</h3><p>We learn from what happens when you change a note — perturbation data, not observation alone.</p></div><div><span class="n">04</span><h3>Mechanistic</h3><p>Every prediction can be traced back through the parts that produced it. A result you cannot follow is a result you cannot use.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="mono eyebrow">What we are building</span>
+      <div class="rows"><div class="row"><div class="k">Discovery</div><div><h3>Target discovery with the context intact</h3><p>Targets are ranked on simulated tissue response. The candidate that only works in a dissociated cell is caught before it costs a programme.</p></div></div><div class="row"><div class="k">Data</div><div><h3>Multi-omics, joined properly</h3><p>Fusing modalities is where most of the signal is created and most of it is lost. We treat the join as the hard part, because it is.</p></div></div><div class="row"><div class="k">People</div><div><h3>A small group, a long horizon</h3><p>Computational tech-bio in Vancouver. Modelling people who read biology, biologists who read models.</p></div></div></div>
+      
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Come help write it down.</h2>
+      <p>We are early, deliberately small, and looking for people who find the tissue scale more interesting than the cell scale.</p>
+      <a class="mail link" href="mailto:contact@biosymphony.ai">contact@biosymphony.ai</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">&copy; 2026 BioSymphony · Vancouver, BC</span>
+    <a class="mono" href="/demo/" style="text-decoration:none">Design study 5 of 12</a>
+  </div>
+</footer>
+
+<div class="spec">
+  <div class="wrap">
+    <span class="tag">1d</span>
+    <span class="nm">The Stave</span>
+    <span class="sw"><i style="background:#1E2A2B"></i><i style="background:#135E5A"></i><i style="background:#7FA8A0"></i><i style="background:#D9A441"></i><i style="background:#FAF7F1"></i></span>
+    <span class="meta">Newsreader · Archivo · Plex Mono</span>
+    <span class="meta">BIOLOGY, NOTATED</span>
+    <span class="nav"><a href="/demo/5">&larr; prev</a><a href="/demo/">all 12</a><a href="/demo/6">next &rarr;</a></span>
+  </div>
+</div>
+</body>
+</html>

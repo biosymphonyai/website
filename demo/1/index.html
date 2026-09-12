@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Lockup · BioSymphony design study 1</title>
+<meta name="description" content="BioSymphony design system study 1 — The Lockup (TM). One-page treatment of the virtual-tissue positioning.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0B1B3F">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/demo/demo.css">
+<style>
+  :root { --ink:#FFFFFF; --ink-2:#F2F6FF; --fg:#0B1B3F; --fg-2:#57678C;
+    --accent:#0143D6; --accent-2:#58B1FD; --rule:rgba(11,27,63,.13);
+    --display:'Sora',system-ui,sans-serif; --body:'Archivo',system-ui,sans-serif;
+    --dw:600; --dt:-.03em; --dlh:1.06; --radius:10px; }
+  .hero{background:linear-gradient(180deg,var(--ink-2),transparent)}
+    .grid4 .n{color:var(--accent)}
+    .ornament img{width:min(23rem,80%)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/demo/"><img src="/demo/assets/biosymphony-tm.png" alt="" width="30" height="15" style="height:2rem;width:auto"></a>
+    <nav>
+      <a class="hide-sm" href="#thesis">Thesis</a>
+      <a class="hide-sm" href="#platform">Platform</a>
+      <a class="cta" href="mailto:contact@biosymphony.ai">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="ornament"><img src="/demo/assets/biosymphony-tm.png" alt="BioSymphony" width="746" height="381"></div>
+      <span class="mono eyebrow">Orchestrating the signals of life</span>
+      <h1>A virtual tissue for target discovery.</h1>
+      <p class="lede">BioSymphony builds multimodal, multi-scale models of living tissue — causal and mechanistic, not correlational. We simulate how a perturbation travels from molecule to cell to tissue, so the target you carry into the clinic is the one that holds.</p>
+      
+    </div>
+  </section>
+
+  <section class="thesis" id="thesis">
+    <div class="wrap">
+      <span class="mono eyebrow">The thesis</span>
+      <p>The cell was never the unit of disease. The tissue is.</p>
+      <p class="after">A hepatocyte in a dish and a hepatocyte in a fibrotic liver are the same cell running a different program. Virtual-cell models learn the cell and lose the context. We model the context: the neighbours, the gradients, the matrix, and the feedback that makes a tissue behave like an organ instead of a population.</p>
+    </div>
+  </section>
+
+  <section id="platform">
+    <div class="wrap">
+      <span class="mono eyebrow">Four commitments</span>
+      <div class="grid4"><div><span class="n">01</span><h3>Multimodal</h3><p>Transcriptomic, proteomic, epigenomic, spatial and imaging channels enter one latent space instead of four disconnected pipelines.</p></div><div><span class="n">02</span><h3>Multi-scale</h3><p>Molecule, cell, neighbourhood, tissue. One model carries state across all four, so a pathway edit shows up as a tissue phenotype.</p></div><div><span class="n">03</span><h3>Causal</h3><p>Trained on perturbation, not observation. The model answers what happens if you intervene — not what tends to co-occur.</p></div><div><span class="n">04</span><h3>Mechanistic</h3><p>Every prediction resolves to a pathway a biologist can read, argue with, and design an experiment against.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="mono eyebrow">What we are building</span>
+      <div class="rows"><div class="row"><div class="k">Targets</div><div><h3>Target discovery in context</h3><p>We rank targets by their simulated effect on tissue state, not by differential expression in a bulk sample. Context is the filter most target lists never pass through.</p></div></div><div class="row"><div class="k">Data</div><div><h3>Multi-omics, one substrate</h3><p>Public atlases, licensed cohorts, and purpose-built perturbation screens are fused into a single representation — the value is in the joins, not the volume.</p></div></div><div class="row"><div class="k">Translation</div><div><h3>Built against failure modes</h3><p>Phase II attrition is a modelling problem wearing a clinical costume. We validate against the mechanisms that actually break translation.</p></div></div></div>
+      
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Orchestrating the signals of life.</h2>
+      <p>We are a computational tech-bio platform in Vancouver, BC. If you build models of living systems, or you have data that deserves better models, we would like to hear from you.</p>
+      <a class="mail link" href="mailto:contact@biosymphony.ai">contact@biosymphony.ai</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">&copy; 2026 BioSymphony · Vancouver, BC</span>
+    <a class="mono" href="/demo/" style="text-decoration:none">Design study 1 of 12</a>
+  </div>
+</footer>
+
+<div class="spec">
+  <div class="wrap">
+    <span class="tag">TM</span>
+    <span class="nm">The Lockup</span>
+    <span class="sw"><i style="background:#0B1B3F"></i><i style="background:#0143D6"></i><i style="background:#3D76FF"></i><i style="background:#58B1FD"></i><i style="background:#F2F6FF"></i></span>
+    <span class="meta">Sora · Archivo · Plex Mono</span>
+    <span class="meta">TRADEMARK, AS FILED</span>
+    <span class="nav"><a href="/demo/12">&larr; prev</a><a href="/demo/">all 12</a><a href="/demo/2">next &rarr;</a></span>
+  </div>
+</div>
+</body>
+</html>

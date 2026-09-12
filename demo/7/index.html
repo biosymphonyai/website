@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Frontier · BioSymphony design study 7</title>
+<meta name="description" content="BioSymphony design system study 7 — The Frontier (2b). One-page treatment of the virtual-tissue positioning.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#101010">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/demo/demo.css">
+<style>
+  :root { --ink:#F7F6F2; --ink-2:#FFFFFF; --fg:#101010; --fg-2:#5A5852;
+    --accent:#E8501A; --accent-2:#3A3733; --rule:rgba(16,16,16,.14);
+    --display:'Instrument Sans',system-ui,sans-serif; --body:'Instrument Sans',system-ui,sans-serif;
+    --dw:600; --dt:-.028em; --maxw:58rem; }
+  .brand .name{text-transform:lowercase;font-size:1.0625rem}
+    h1{text-transform:none}
+    h1 .p{color:var(--accent)}
+    .fn{font-family:var(--mono);font-size:.75rem;line-height:1.8;color:var(--fg-2);
+      max-width:56ch;margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--rule)}
+    .fn sup{color:var(--accent)}
+    .grid4 .n{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/demo/"><svg viewBox="0 0 110 110" width="20" height="20" aria-hidden="true"><line x1="55" y1="55" x2="97.0" y2="55.0" stroke="#101010" stroke-width="5.5" stroke-linecap="round"/><line x1="55" y1="55" x2="84.7" y2="84.7" stroke="#101010" stroke-width="5.5" stroke-linecap="round"/><line x1="55" y1="55" x2="55.0" y2="97.0" stroke="#101010" stroke-width="5.5" stroke-linecap="round"/><line x1="55" y1="55" x2="25.3" y2="84.7" stroke="#101010" stroke-width="5.5" stroke-linecap="round"/><line x1="55" y1="55" x2="13.0" y2="55.0" stroke="#101010" stroke-width="5.5" stroke-linecap="round"/><line x1="55" y1="55" x2="25.3" y2="25.3" stroke="#101010" stroke-width="5.5" stroke-linecap="round"/><line x1="55" y1="55" x2="55.0" y2="13.0" stroke="#101010" stroke-width="5.5" stroke-linecap="round"/><line x1="55" y1="55" x2="84.7" y2="25.3" stroke="#101010" stroke-width="5.5" stroke-linecap="round"/><circle cx="55" cy="55" r="11" fill="#E8501A"/></svg><span class="name">biosymphony</span></a>
+    <nav>
+      <a class="hide-sm" href="#thesis">Thesis</a>
+      <a class="hide-sm" href="#platform">Platform</a>
+      <a class="cta" href="mailto:contact@biosymphony.ai">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="ornament"><svg viewBox="0 0 110 110" width="104" height="104" aria-hidden="true"><line x1="55" y1="55" x2="97.0" y2="55.0" stroke="#101010" stroke-width="5.5" stroke-linecap="round"/><line x1="55" y1="55" x2="84.7" y2="84.7" stroke="#101010" stroke-width="5.5" stroke-linecap="round"/><line x1="55" y1="55" x2="55.0" y2="97.0" stroke="#101010" stroke-width="5.5" stroke-linecap="round"/><line x1="55" y1="55" x2="25.3" y2="84.7" stroke="#101010" stroke-width="5.5" stroke-linecap="round"/><line x1="55" y1="55" x2="13.0" y2="55.0" stroke="#101010" stroke-width="5.5" stroke-linecap="round"/><line x1="55" y1="55" x2="25.3" y2="25.3" stroke="#101010" stroke-width="5.5" stroke-linecap="round"/><line x1="55" y1="55" x2="55.0" y2="13.0" stroke="#101010" stroke-width="5.5" stroke-linecap="round"/><line x1="55" y1="55" x2="84.7" y2="25.3" stroke="#101010" stroke-width="5.5" stroke-linecap="round"/><circle cx="55" cy="55" r="11" fill="#E8501A"/></svg></div>
+      <span class="mono eyebrow">Simulating disease*</span>
+      <h1>A virtual tissue, built to be wrong in measurable ways<span class="p">.</span></h1>
+      <p class="lede">Most models of biology are unfalsifiable in practice: broad enough to explain any outcome, evaluated on data they were fit to. We are building the other kind — multimodal, multi-scale, causal, mechanistic, and specific enough to be caught out.</p>
+      
+    </div>
+  </section>
+
+  <section class="thesis" id="thesis">
+    <div class="wrap">
+      <span class="mono eyebrow">The thesis</span>
+      <p>If it cannot fail a prediction, it is not a model. It is a description.</p>
+      <p class="after">The measure we care about is held-out perturbation accuracy in unseen tissue. It is a harder benchmark than the field usually reports, it makes early results look worse, and it is the only number that has any relationship to whether a target survives Phase II.</p>
+    </div>
+  </section>
+
+  <section id="platform">
+    <div class="wrap">
+      <span class="mono eyebrow">Four commitments</span>
+      <div class="grid4"><div><span class="n">01</span><h3>Multimodal</h3><p>Transcriptomic, proteomic, epigenomic and spatial channels in one representation. Modality dropout is a stated failure mode, not a footnote.</p></div><div><span class="n">02</span><h3>Multi-scale</h3><p>Molecular → cellular → tissue, in one model. Scale handoffs are where information is silently discarded.</p></div><div><span class="n">03</span><h3>Causal</h3><p>Perturbation-trained. Counterfactual queries are the intended interface; correlation is a baseline we report against.</p></div><div><span class="n">04</span><h3>Mechanistic</h3><p>Predictions carry pathway-level attribution. Unattributable predictions are logged as such.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="mono eyebrow">What we are building</span>
+      <div class="rows"><div class="row"><div class="k">Object</div><div><h3>The virtual tissue</h3><p>Not a virtual cell. Cells in context — neighbours, gradients, matrix, feedback — because context is what the clinic tests and the dish does not.</p></div></div><div class="row"><div class="k">Output</div><div><h3>Targets, with error bars</h3><p>Target discovery across multi-omics, delivered with the model's uncertainty and the perturbations it failed to predict.</p></div></div><div class="row"><div class="k">Method</div><div><h3>Evaluation before scale</h3><p>We would rather have a small model with an honest benchmark than a large one with a leaderboard.</p></div></div></div>
+      <p class="fn"><sup>*</sup> Simulating disease, in the narrow sense: predicting how a perturbation propagates through modelled tissue, and being specific enough about it that the prediction can be shown false.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Open to scrutiny.</h2>
+      <p>Computational tech-bio, Vancouver BC. If you want to argue with the benchmark, that is the conversation we want.</p>
+      <a class="mail link" href="mailto:contact@biosymphony.ai">contact@biosymphony.ai</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">&copy; 2026 BioSymphony · Vancouver, BC</span>
+    <a class="mono" href="/demo/" style="text-decoration:none">Design study 7 of 12</a>
+  </div>
+</footer>
+
+<div class="spec">
+  <div class="wrap">
+    <span class="tag">2b</span>
+    <span class="nm">The Frontier</span>
+    <span class="sw"><i style="background:#101010"></i><i style="background:#3A3733"></i><i style="background:#E8501A"></i><i style="background:#C9C4BA"></i><i style="background:#F7F6F2"></i></span>
+    <span class="meta">Instrument Sans · Plex Mono</span>
+    <span class="meta">RESEARCH-LAB MINIMAL</span>
+    <span class="nav"><a href="/demo/7">&larr; prev</a><a href="/demo/">all 12</a><a href="/demo/8">next &rarr;</a></span>
+  </div>
+</div>
+</body>
+</html>

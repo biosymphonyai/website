@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Overture · BioSymphony design study 6</title>
+<meta name="description" content="BioSymphony design system study 6 — The Overture (2a). One-page treatment of the virtual-tissue positioning.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#26060F">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/demo/demo.css">
+<style>
+  :root { --ink:#26060F; --ink-2:#3D1220; --fg:#E8D9BF; --fg-2:#B09A85;
+    --accent:#D8A648; --accent-2:#8A2C3B; --rule:rgba(232,217,191,.16);
+    --display:'Cormorant',Georgia,serif; --body:'Archivo',system-ui,sans-serif;
+    --dw:400; --dt:-.005em; --dlh:1.05; --maxw:60rem; }
+  .brand .name{font-size:1.375rem;letter-spacing:0}
+    h1{font-size:clamp(2.4rem,7.5vw,4.6rem)}
+    h2{font-size:clamp(1.75rem,4.2vw,2.75rem)}
+    .movement{font-family:var(--mono);font-size:.6875rem;letter-spacing:.2em;
+      text-transform:uppercase;color:var(--accent);display:block;margin-bottom:1.25rem}
+    .thesis p{font-size:clamp(1.75rem,4.4vw,2.75rem);max-width:20ch}
+    .grid4 .n{color:var(--accent);font-size:.6875rem;letter-spacing:.2em}
+    .grid4 h3{font-family:var(--display);font-size:1.5rem;font-weight:400}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/demo/"><svg viewBox="0 0 250 112" width="26" height="11" aria-hidden="true"><circle cx="94.2" cy="89.5" r="2.60" fill="#D8A648"/><circle cx="101.7" cy="79.2" r="2.60" fill="#D8A648"/><circle cx="112.5" cy="72.4" r="2.60" fill="#D8A648"/><circle cx="125.0" cy="70.0" r="2.60" fill="#D8A648"/><circle cx="137.5" cy="72.4" r="2.60" fill="#D8A648"/><circle cx="148.3" cy="79.2" r="2.60" fill="#D8A648"/><circle cx="155.8" cy="89.5" r="2.60" fill="#D8A648"/><circle cx="76.1" cy="81.0" r="2.35" fill="#D8A648"/><circle cx="82.5" cy="70.6" r="2.35" fill="#D8A648"/><circle cx="91.1" cy="62.0" r="2.35" fill="#D8A648"/><circle cx="101.4" cy="55.4" r="2.35" fill="#D8A648"/><circle cx="112.9" cy="51.4" r="2.35" fill="#D8A648"/><circle cx="125.0" cy="50.0" r="2.35" fill="#D8A648"/><circle cx="137.1" cy="51.4" r="2.35" fill="#D8A648"/><circle cx="148.6" cy="55.4" r="2.35" fill="#D8A648"/><circle cx="158.9" cy="62.0" r="2.35" fill="#D8A648"/><circle cx="167.5" cy="70.6" r="2.35" fill="#D8A648"/><circle cx="173.9" cy="81.0" r="2.35" fill="#D8A648"/><circle cx="58.0" cy="72.5" r="2.10" fill="#D8A648"/><circle cx="64.0" cy="62.1" r="2.10" fill="#D8A648"/><circle cx="71.5" cy="52.9" r="2.10" fill="#D8A648"/><circle cx="80.4" cy="44.9" r="2.10" fill="#D8A648"/><circle cx="90.5" cy="38.5" r="2.10" fill="#D8A648"/><circle cx="101.5" cy="33.8" r="2.10" fill="#D8A648"/><circle cx="113.1" cy="31.0" r="2.10" fill="#D8A648"/><circle cx="125.0" cy="30.0" r="2.10" fill="#D8A648"/><circle cx="136.9" cy="31.0" r="2.10" fill="#D8A648"/><circle cx="148.5" cy="33.8" r="2.10" fill="#D8A648"/><circle cx="159.5" cy="38.5" r="2.10" fill="#D8A648"/><circle cx="169.6" cy="44.9" r="2.10" fill="#D8A648"/><circle cx="178.5" cy="52.9" r="2.10" fill="#D8A648"/><circle cx="186.0" cy="62.1" r="2.10" fill="#D8A648"/><circle cx="192.0" cy="72.5" r="2.10" fill="#D8A648"/><circle cx="39.9" cy="64.0" r="1.85" fill="#D8A648"/><circle cx="45.6" cy="53.6" r="1.85" fill="#D8A648"/><circle cx="52.6" cy="44.1" r="1.85" fill="#D8A648"/><circle cx="60.7" cy="35.5" r="1.85" fill="#D8A648"/><circle cx="69.7" cy="28.0" r="1.85" fill="#D8A648"/><circle cx="79.7" cy="21.6" r="1.85" fill="#D8A648"/><circle cx="90.4" cy="16.6" r="1.85" fill="#D8A648"/><circle cx="101.6" cy="13.0" r="1.85" fill="#D8A648"/><circle cx="113.2" cy="10.7" r="1.85" fill="#D8A648"/><circle cx="125.0" cy="10.0" r="1.85" fill="#D8A648"/><circle cx="136.8" cy="10.7" r="1.85" fill="#D8A648"/><circle cx="148.4" cy="13.0" r="1.85" fill="#D8A648"/><circle cx="159.6" cy="16.6" r="1.85" fill="#D8A648"/><circle cx="170.3" cy="21.6" r="1.85" fill="#D8A648"/><circle cx="180.3" cy="28.0" r="1.85" fill="#D8A648"/><circle cx="189.3" cy="35.5" r="1.85" fill="#D8A648"/><circle cx="197.4" cy="44.1" r="1.85" fill="#D8A648"/><circle cx="204.4" cy="53.6" r="1.85" fill="#D8A648"/><circle cx="210.1" cy="64.0" r="1.85" fill="#D8A648"/><circle cx="125" cy="100" r="6" fill="#E8D9BF"/></svg><span class="name">BioSymphony</span></a>
+    <nav>
+      <a class="hide-sm" href="#thesis">Thesis</a>
+      <a class="hide-sm" href="#platform">Platform</a>
+      <a class="cta" href="mailto:contact@biosymphony.ai">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="ornament"><svg viewBox="0 0 250 112" width="240" height="107" aria-hidden="true"><circle cx="94.2" cy="89.5" r="2.60" fill="rgba(232,217,191,.55)"/><circle cx="101.7" cy="79.2" r="2.60" fill="rgba(232,217,191,.55)"/><circle cx="112.5" cy="72.4" r="2.60" fill="rgba(232,217,191,.55)"/><circle cx="125.0" cy="70.0" r="2.60" fill="rgba(232,217,191,.55)"/><circle cx="137.5" cy="72.4" r="2.60" fill="rgba(232,217,191,.55)"/><circle cx="148.3" cy="79.2" r="2.60" fill="rgba(232,217,191,.55)"/><circle cx="155.8" cy="89.5" r="2.60" fill="rgba(232,217,191,.55)"/><circle cx="76.1" cy="81.0" r="2.35" fill="rgba(232,217,191,.55)"/><circle cx="82.5" cy="70.6" r="2.35" fill="rgba(232,217,191,.55)"/><circle cx="91.1" cy="62.0" r="2.35" fill="rgba(232,217,191,.55)"/><circle cx="101.4" cy="55.4" r="2.35" fill="rgba(232,217,191,.55)"/><circle cx="112.9" cy="51.4" r="2.35" fill="rgba(232,217,191,.55)"/><circle cx="125.0" cy="50.0" r="2.35" fill="rgba(232,217,191,.55)"/><circle cx="137.1" cy="51.4" r="2.35" fill="rgba(232,217,191,.55)"/><circle cx="148.6" cy="55.4" r="2.35" fill="rgba(232,217,191,.55)"/><circle cx="158.9" cy="62.0" r="2.35" fill="rgba(232,217,191,.55)"/><circle cx="167.5" cy="70.6" r="2.35" fill="rgba(232,217,191,.55)"/><circle cx="173.9" cy="81.0" r="2.35" fill="rgba(232,217,191,.55)"/><circle cx="58.0" cy="72.5" r="2.10" fill="rgba(232,217,191,.55)"/><circle cx="64.0" cy="62.1" r="2.10" fill="rgba(232,217,191,.55)"/><circle cx="71.5" cy="52.9" r="2.10" fill="rgba(232,217,191,.55)"/><circle cx="80.4" cy="44.9" r="2.10" fill="rgba(232,217,191,.55)"/><circle cx="90.5" cy="38.5" r="2.10" fill="rgba(232,217,191,.55)"/><circle cx="101.5" cy="33.8" r="2.10" fill="rgba(232,217,191,.55)"/><circle cx="113.1" cy="31.0" r="2.10" fill="rgba(232,217,191,.55)"/><circle cx="125.0" cy="30.0" r="2.10" fill="rgba(232,217,191,.55)"/><circle cx="136.9" cy="31.0" r="2.10" fill="rgba(232,217,191,.55)"/><circle cx="148.5" cy="33.8" r="2.10" fill="rgba(232,217,191,.55)"/><circle cx="159.5" cy="38.5" r="2.10" fill="rgba(232,217,191,.55)"/><circle cx="169.6" cy="44.9" r="2.10" fill="rgba(232,217,191,.55)"/><circle cx="178.5" cy="52.9" r="2.10" fill="rgba(232,217,191,.55)"/><circle cx="186.0" cy="62.1" r="2.10" fill="rgba(232,217,191,.55)"/><circle cx="192.0" cy="72.5" r="2.10" fill="rgba(232,217,191,.55)"/><circle cx="39.9" cy="64.0" r="1.85" fill="rgba(232,217,191,.55)"/><circle cx="45.6" cy="53.6" r="1.85" fill="rgba(232,217,191,.55)"/><circle cx="52.6" cy="44.1" r="1.85" fill="rgba(232,217,191,.55)"/><circle cx="60.7" cy="35.5" r="1.85" fill="rgba(232,217,191,.55)"/><circle cx="69.7" cy="28.0" r="1.85" fill="rgba(232,217,191,.55)"/><circle cx="79.7" cy="21.6" r="1.85" fill="rgba(232,217,191,.55)"/><circle cx="90.4" cy="16.6" r="1.85" fill="rgba(232,217,191,.55)"/><circle cx="101.6" cy="13.0" r="1.85" fill="rgba(232,217,191,.55)"/><circle cx="113.2" cy="10.7" r="1.85" fill="rgba(232,217,191,.55)"/><circle cx="125.0" cy="10.0" r="1.85" fill="rgba(232,217,191,.55)"/><circle cx="136.8" cy="10.7" r="1.85" fill="rgba(232,217,191,.55)"/><circle cx="148.4" cy="13.0" r="1.85" fill="rgba(232,217,191,.55)"/><circle cx="159.6" cy="16.6" r="1.85" fill="rgba(232,217,191,.55)"/><circle cx="170.3" cy="21.6" r="1.85" fill="rgba(232,217,191,.55)"/><circle cx="180.3" cy="28.0" r="1.85" fill="rgba(232,217,191,.55)"/><circle cx="189.3" cy="35.5" r="1.85" fill="rgba(232,217,191,.55)"/><circle cx="197.4" cy="44.1" r="1.85" fill="rgba(232,217,191,.55)"/><circle cx="204.4" cy="53.6" r="1.85" fill="rgba(232,217,191,.55)"/><circle cx="210.1" cy="64.0" r="1.85" fill="rgba(232,217,191,.55)"/><circle cx="125" cy="100" r="6" fill="#D8A648"/></svg></div>
+      <span class="mono eyebrow">Orchestrating the signals of life</span>
+      <h1>Every cell in concert.</h1>
+      <p class="lede">An orchestra is not a set of soloists in a room. What it produces cannot be recovered from the parts, only from the arrangement — who enters, when, against what. Tissue is the same object, and we are modelling it that way.</p>
+      
+    </div>
+  </section>
+
+  <section class="thesis" id="thesis">
+    <div class="wrap">
+      <span class="mono eyebrow">The thesis</span>
+      <p>No cell acts alone, and no target does either.</p>
+      <p class="after">A target is not a molecule. It is a molecule in a cell, in a neighbourhood, in a tissue under a particular set of conditions — and change any of those and the intervention changes with it. The field has spent a decade getting very good at the first noun. We are working on the sentence.</p>
+    </div>
+  </section>
+
+  <section id="platform">
+    <div class="wrap">
+      <span class="mono eyebrow">Four commitments</span>
+      <div class="grid4"><div><span class="n">I</span><h3>Multimodal</h3><p>Every section reads from a different part. Transcriptomic, proteomic, epigenomic, spatial — one performance.</p></div><div><span class="n">II</span><h3>Multi-scale</h3><p>The phrase, the passage, the whole work. Molecular through tissue, held in a single model.</p></div><div><span class="n">III</span><h3>Causal</h3><p>We study what happens when the conductor changes something. Perturbation, not observation.</p></div><div><span class="n">IV</span><h3>Mechanistic</h3><p>A result you cannot trace to a mechanism is applause without a performance.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="mono eyebrow">What we are building</span>
+      <div class="rows"><div class="row"><div class="k">I. Overture</div><div><h3>The virtual tissue</h3><p>Multimodal, multi-scale, causal and mechanistic models of living tissue — the substrate everything else is built on.</p></div></div><div class="row"><div class="k">II. Andante</div><div><h3>Target discovery</h3><p>Interventions simulated in context, then ranked by tissue-level effect, tractability and translational risk.</p></div></div><div class="row"><div class="k">III. Finale</div><div><h3>Clinical translation</h3><p>The models are judged on one question: do they change which molecules reach patients, and whether those molecules work.</p></div></div></div>
+      
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Orchestrating the signals of life.</h2>
+      <p>A computational tech-bio platform. Vancouver, British Columbia.</p>
+      <a class="mail link" href="mailto:contact@biosymphony.ai">contact@biosymphony.ai</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">&copy; 2026 BioSymphony · Vancouver, BC</span>
+    <a class="mono" href="/demo/" style="text-decoration:none">Design study 6 of 12</a>
+  </div>
+</footer>
+
+<div class="spec">
+  <div class="wrap">
+    <span class="tag">2a</span>
+    <span class="nm">The Overture</span>
+    <span class="sw"><i style="background:#26060F"></i><i style="background:#3D1220"></i><i style="background:#8A2C3B"></i><i style="background:#D8A648"></i><i style="background:#E8D9BF"></i></span>
+    <span class="meta">Cormorant Garamond · Archivo · Plex Mono</span>
+    <span class="meta">FULL ORCHESTRA</span>
+    <span class="nav"><a href="/demo/6">&larr; prev</a><a href="/demo/">all 12</a><a href="/demo/7">next &rarr;</a></span>
+  </div>
+</div>
+</body>
+</html>

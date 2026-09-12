@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Signal · BioSymphony design study 4</title>
+<meta name="description" content="BioSymphony design system study 4 — The Signal (1c). One-page treatment of the virtual-tissue positioning.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0C1220">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/demo/demo.css">
+<style>
+  :root { --ink:#0C1220; --ink-2:#1A2438; --fg:#F2F5FA; --fg-2:#8595B0;
+    --accent:#2FE6C8; --accent-2:#8B7CF6; --rule:rgba(133,149,176,.18);
+    --display:'Space Grotesk',system-ui,sans-serif; --body:'Archivo',system-ui,sans-serif;
+    --dw:600; --dt:-.035em; --radius:8px; }
+  .brand .name{text-transform:lowercase;letter-spacing:-.03em;font-size:1.125rem}
+    h1{text-transform:lowercase}
+    .grid4 .n{color:var(--accent)}
+    .row .k{color:var(--accent)}
+
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/demo/"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9" fill="none" stroke="#2FE6C8" stroke-width="3"/></svg><span class="name">biosymphony</span></a>
+    <nav>
+      <a class="hide-sm" href="#thesis">Thesis</a>
+      <a class="hide-sm" href="#platform">Platform</a>
+      <a class="cta" href="mailto:contact@biosymphony.ai">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="ornament"><svg viewBox="0 0 260 96" width="280" height="103" fill="none" aria-hidden="true">
+  <path d="M6 74C34 74 44 26 72 26s34 44 60 44 36-58 62-58 26 34 54 34" stroke="#2FE6C8" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="72" cy="26" r="9" fill="none" stroke="#2FE6C8" stroke-width="4"/>
+  <circle cx="132" cy="70" r="9" fill="none" stroke="#8B7CF6" stroke-width="4"/>
+  <circle cx="194" cy="12" r="11" fill="none" stroke="#8B7CF6" stroke-width="4"/>
+</svg></div>
+      <span class="mono eyebrow">cells → tissues → organs</span>
+      <h1>Biology, resolved as a signal.</h1>
+      <p class="lede">A living tissue is a system under continuous perturbation, emitting measurements at four scales at once. Treat it as a signal-processing problem and most of the modern AI stack becomes applicable — including the parts that require you to be honest about resolution.</p>
+      
+    </div>
+  </section>
+
+  <section class="thesis" id="thesis">
+    <div class="wrap">
+      <span class="mono eyebrow">The thesis</span>
+      <p>One model, carrying state from molecule to organ.</p>
+      <p class="after">The scale boundary is where the field keeps losing information. Molecular models stop at the membrane; cell models stop at the cell; tissue models start from summary statistics that already threw the mechanism away. We are building the model that does not hand off at the boundary.</p>
+    </div>
+  </section>
+
+  <section id="platform">
+    <div class="wrap">
+      <span class="mono eyebrow">Four commitments</span>
+      <div class="grid4"><div><span class="n">01</span><h3>multimodal</h3><p>Six measurement channels, one latent state. Missing modalities are inferred rather than dropped.</p></div><div><span class="n">02</span><h3>multi-scale</h3><p>State propagates upward and constraints propagate downward. Both directions, one set of weights.</p></div><div><span class="n">03</span><h3>causal</h3><p>Perturbation-conditioned training. The forward pass is an intervention, not a lookup.</p></div><div><span class="n">04</span><h3>mechanistic</h3><p>Attribution back to pathway and cell-cell interaction — required output, not an interpretability afterthought.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="mono eyebrow">What we are building</span>
+      <div class="rows"><div class="row"><div class="k">stack</div><div><h3>Infrastructure first</h3><p>Fusion, tokenisation, training and evaluation for perturbation biology, built as a platform because the bottleneck was never the architecture.</p></div></div><div class="row"><div class="k">targets</div><div><h3>Target discovery as inference</h3><p>Ranking targets is a query against the model, not a separate pipeline. New data improves every prior answer.</p></div></div><div class="row"><div class="k">eval</div><div><h3>Held-out perturbations</h3><p>We evaluate on interventions the model has never seen, in tissues it has never seen. Everything else is memorisation with extra steps.</p></div></div></div>
+      
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Building the world model for living tissue.</h2>
+      <p>Computational tech-bio, Vancouver BC. Talking to researchers in perturbation biology, multi-omics and ML systems.</p>
+      <a class="mail link" href="mailto:contact@biosymphony.ai">contact@biosymphony.ai</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">&copy; 2026 BioSymphony · Vancouver, BC</span>
+    <a class="mono" href="/demo/" style="text-decoration:none">Design study 4 of 12</a>
+  </div>
+</footer>
+
+<div class="spec">
+  <div class="wrap">
+    <span class="tag">1c</span>
+    <span class="nm">The Signal</span>
+    <span class="sw"><i style="background:#0C1220"></i><i style="background:#1A2438"></i><i style="background:#2FE6C8"></i><i style="background:#8B7CF6"></i><i style="background:#F2F5FA"></i></span>
+    <span class="meta">Space Grotesk · Plex Mono</span>
+    <span class="meta">DEEP-TECH DARK</span>
+    <span class="nav"><a href="/demo/4">&larr; prev</a><a href="/demo/">all 12</a><a href="/demo/5">next &rarr;</a></span>
+  </div>
+</div>
+</body>
+</html>
