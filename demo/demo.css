@@ -157,5 +157,13 @@ footer .mono { margin-right:auto; }
 .spec .nav { margin-left:auto; display:flex; gap:.85rem; }
 .spec .nav a { color:#8A8A8F; text-decoration:none; }
 .spec .nav a:hover { color:#fff; }
+/* keys vs swipe: show whichever the device actually has */
+.spec .hint { color:#5E5E63; letter-spacing:.06em; white-space:nowrap; }
+.spec .hint b { font-weight:400; }
+.spec .hint .t { display:none; }
+@media (hover:none) {
+  .spec .hint .k { display:none; }
+  .spec .hint .t { display:inline; }
+}
 body { padding-bottom:4.5rem; }
 @media (max-width:34rem){ .spec .meta { display:none; } }

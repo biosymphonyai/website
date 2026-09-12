@@ -37,6 +37,11 @@ who has them.
 | 5 | 1d | The Stave | 11 | 3c | The Matinee |
 | 6 | 2a | The Overture | 12 | 4a | The Cluster |
 
+Left/right arrow keys and horizontal swipes move between studies, wrapping at both ends.
+`demo/nav.js` reads its targets from the spec strip's `rel="prev"`/`rel="next"` links, so
+page order stays defined in one place; it ignores modifier-key combos, near-vertical or
+slow drags, and gestures starting within 32px of a screen edge (the OS back gesture).
+
 Pages are committed as plain static HTML — edit them directly. The shared scaffold is
 `demo/demo.css`; each page's palette and type tokens live in its own inline `<style>`.
 All typefaces are self-hosted in `/fonts`; the site still makes zero external requests.
