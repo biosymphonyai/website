@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biosymphony</title>
+<meta name="description" content="A frontier lab building a world model of living systems.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111">
+<meta property="og:title" content="Biosymphony">
+<meta property="og:description" content="A frontier lab building a world model of living systems.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://biosymphony.ai">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @font-face {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('fonts/jost.woff2') format('woff2');
+  }
+
+  :root {
+    /* brand-guide palette: ink #111111, gradient #F1836B/#E4569B/#C13FD1, blues #33569F/#93A3C9 */
+    --paper:   #FFFFFF;
+    --ink:     #111111;
+    --muted:   #565D6B;
+    --faint:   #657083;
+    --blue:    #33569F;
+    --pink:    #E4569B;
+    --magenta: #C13FD1;
+    --coral:   #F1836B;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #111111;
+      --ink:   #F2F3F5;
+      --muted: #A9AFBC;
+      --faint: #767F90;
+      --blue:  #7D9AD6; /* deck blue lightened for contrast on ink */
+    }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { background: var(--paper); }
+
+  body {
+    /* background intentionally on html only — an opaque body background
+       would paint over the fixed z-index:-1 canvas */
+    color: var(--ink);
+    font-family: 'Jost', 'Futura', 'Century Gothic', 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100svh;
+    padding: 1.5rem;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection { background: var(--magenta); color: var(--paper); }
+  :focus-visible { outline: 1px solid var(--blue); outline-offset: 4px; }
+
+  canvas#field {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    -webkit-mask-image: radial-gradient(ellipse closest-side at 50% 50%, transparent 20%, black 70%);
+    mask-image: radial-gradient(ellipse closest-side at 50% 50%, transparent 20%, black 70%);
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 3rem;
+    max-width: 40rem;
+    padding: 3rem 0;
+  }
+
+  .wordmark {
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-weight: 600;
+    font-size: clamp(1.9rem, 4.5vw, 2.75rem);
+    line-height: 1.2;
+  }
+
+  .rule {
+    width: 4.5rem;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--coral), var(--pink), var(--magenta));
+    margin-top: -1.75rem;
+  }
+
+  .manifesto {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 46ch;
+  }
+
+  .manifesto p {
+    color: var(--muted);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+
+  .contact {
+    font-family: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  .contact a {
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.18s ease;
+    display: inline-block;
+    padding: 0.9375rem 0;
+    margin: -0.9375rem 0;
+  }
+
+  .contact a:hover { border-bottom-color: var(--blue); }
+
+  footer {
+    margin-top: auto;
+    font-family: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--faint);
+    padding-top: 3rem;
+  }
+</style>
+</head>
+<body>
+<canvas id="field" aria-hidden="true"></canvas>
+
+<main>
+  <p class="wordmark">Biosymphony</p>
+
+  <h1>The virtual&nbsp;tissue.</h1>
+
+  <div class="rule" aria-hidden="true"></div>
+
+  <div class="manifesto">
+    <p>A world model of living systems, grounded in mechanism across&nbsp;scales.</p>
+    <p>It is mechanism that makes biology steerable. Not&nbsp;correlation.</p>
+    <p>Biosymphony is a frontier lab orchestrating cell fate across space and time, guiding tissues back to&nbsp;health.</p>
+  </div>
+
+  <p class="contact"><a href="mailto:contact@biosymphony.ai">contact@biosymphony.ai</a></p>
+</main>
+
+<footer>&copy; 2026 Biosymphony</footer>
+
+<script>
+(function () {
+  var canvas = document.getElementById('field');
+  var ctx = canvas.getContext('2d');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var dark = window.matchMedia('(prefers-color-scheme: dark)');
+
+  var MARGIN = 60;
+
+  function palette() {
+    return dark.matches
+      ? { staff: '147, 163, 201', staffA: 0.2, beamA: 0.18, note: '125, 154, 214' }
+      : { staff: '147, 163, 201', staffA: 0.33, beamA: 0.3, note: '51, 86, 159' };
+  }
+  var pal = palette();
+
+  /* accent notes sample the brand gradient: coral, pink, magenta */
+  var GRADIENT = ['241, 131, 107', '228, 86, 155', '193, 63, 209'];
+
+  /* a drifting score: faint five-line staves, note heads with hairline
+     stems (stem direction follows engraving convention), proximity lines
+     between notes on the same stave read as beams */
+  var LINE_GAP = 16;
+  var STAVE_LINES = 5;
+  var STAVE_H = LINE_GAP * (STAVE_LINES - 1);
+  var STAVE_GAP = 130;
+
+  var w, h, dpr, R, staves, notes, rafId = null, last = 0;
+
+  function build() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = window.innerWidth;
+    h = window.innerHeight;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    R = Math.min(140, w * 0.16);
+
+    var unit = STAVE_H + STAVE_GAP;
+    var rows = Math.max(2, Math.round((h - STAVE_GAP) / unit));
+    var totalH = rows * STAVE_H + (rows - 1) * STAVE_GAP;
+    staves = [];
+    for (var s = 0; s < rows; s++) staves.push((h - totalH) / 2 + s * unit);
+
+    var count = Math.min(56, Math.floor(w * h / 24000));
+    notes = new Array(count);
+    for (var i = 0; i < count; i++) {
+      notes[i] = spawn(Math.random() * (w + MARGIN * 2) - MARGIN);
+    }
+  }
+
+  function spawn(x) {
+    var stave = Math.floor(Math.random() * staves.length);
+    var step = Math.floor(Math.random() * (STAVE_LINES * 2 - 1)); /* lines and spaces */
+    return {
+      stave: stave,
+      x: x,
+      y: staves[stave] + step * (LINE_GAP / 2),
+      stemUp: step >= STAVE_LINES - 1,
+      v: 0.12 + Math.random() * 0.22,
+      r: 2.0 + Math.random() * 1.0,
+      phase: Math.random() * Math.PI * 2,
+      accent: Math.random() < 0.3,
+      hue: GRADIENT[Math.floor(Math.random() * GRADIENT.length)]
+    };
+  }
+
+  function draw(t) {
+    ctx.clearRect(0, 0, w, h);
+
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(' + pal.staff + ',' + pal.staffA + ')';
+    for (var s = 0; s < staves.length; s++) {
+      for (var k = 0; k < STAVE_LINES; k++) {
+        var ly = staves[s] + k * LINE_GAP + 0.5;
+        ctx.beginPath();
+        ctx.moveTo(0, ly);
+        ctx.lineTo(w, ly);
+        ctx.stroke();
+      }
+    }
+
+    var i, j, n, m;
+    for (i = 0; i < notes.length; i++) {
+      n = notes[i];
+      for (j = i + 1; j < notes.length; j++) {
+        m = notes[j];
+        if (m.stave !== n.stave) continue;
+        var dx = n.x - m.x, dy = n.y - m.y;
+        var d = Math.sqrt(dx * dx + dy * dy);
+        if (d < R) {
+          ctx.strokeStyle = 'rgba(' + pal.staff + ',' + ((1 - d / R) * pal.beamA).toFixed(3) + ')';
+          ctx.beginPath();
+          ctx.moveTo(n.x, n.y);
+          ctx.lineTo(m.x, m.y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    for (i = 0; i < notes.length; i++) {
+      n = notes[i];
+      var pulse = (Math.sin(t * 0.0008 + n.phase) + 1) / 2;
+      var alpha = n.accent ? 0.45 + pulse * 0.2 : 0.32 + pulse * 0.15;
+      var tone = n.accent ? n.hue : pal.note;
+      var stemX = n.stemUp ? n.x + n.r * 1.15 : n.x - n.r * 1.15;
+      var stemY = n.stemUp ? n.y - LINE_GAP * 1.7 : n.y + LINE_GAP * 1.7;
+      ctx.strokeStyle = 'rgba(' + tone + ',' + (alpha * 0.45).toFixed(3) + ')';
+      ctx.beginPath();
+      ctx.moveTo(stemX, n.y);
+      ctx.lineTo(stemX, stemY);
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(' + tone + ',' + alpha.toFixed(3) + ')';
+      ctx.save();
+      ctx.translate(n.x, n.y);
+      ctx.rotate(-0.32);
+      ctx.scale(1.35, 1);
+      ctx.beginPath();
+      ctx.arc(0, 0, n.r, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  function step(t) {
+    for (var i = 0; i < notes.length; i++) {
+      notes[i].x -= notes[i].v;
+      if (notes[i].x < -MARGIN) notes[i] = spawn(w + MARGIN);
+    }
+  }
+
+  function loop(t) {
+    rafId = requestAnimationFrame(loop);
+    if (t - last < 33) return;
+    last = t;
+    step(t);
+    draw(t);
+  }
+
+  function start() {
+    if (rafId === null && !reduced.matches && !document.hidden) {
+      rafId = requestAnimationFrame(loop);
+    }
+  }
+
+  function stop() {
+    if (rafId !== null) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+  }
+
+  build();
+  if (reduced.matches) {
+    draw(0);
+  } else {
+    start();
+  }
+
+  reduced.addEventListener('change', function () {
+    if (reduced.matches) { stop(); draw(0); } else { start(); }
+  });
+
+  dark.addEventListener('change', function () {
+    pal = palette();
+    if (reduced.matches) draw(0);
+  });
+
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) { stop(); } else { start(); }
+  });
+
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      build();
+      if (reduced.matches) draw(0);
+    }, 200);
+  });
+})();
+</script>
+</body>
+</html>
