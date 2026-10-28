@@ -7,16 +7,16 @@
    ============================================================ */
 
 /* ---- self-hosted faces (no external requests) ---- */
-@font-face { font-family:'Archivo';         font-weight:100 900; font-style:normal; font-display:swap; src:url('/fonts/archivo-var.woff2') format('woff2'); }
-@font-face { font-family:'Space Grotesk';   font-weight:300 700; font-style:normal; font-display:swap; src:url('/fonts/spacegrotesk-var.woff2') format('woff2'); }
-@font-face { font-family:'Sora';            font-weight:100 800; font-style:normal; font-display:swap; src:url('/fonts/sora-var.woff2') format('woff2'); }
-@font-face { font-family:'Instrument Sans'; font-weight:400 700; font-style:normal; font-display:swap; src:url('/fonts/instrumentsans-var.woff2') format('woff2'); }
-@font-face { font-family:'Newsreader';      font-weight:200 800; font-style:normal; font-display:swap; src:url('/fonts/newsreader-var.woff2') format('woff2'); }
-@font-face { font-family:'Cormorant';       font-weight:300 700; font-style:normal; font-display:swap; src:url('/fonts/cormorant-var.woff2') format('woff2'); }
-@font-face { font-family:'Spectral';        font-weight:300; font-style:normal; font-display:swap; src:url('/fonts/spectral-300.woff2') format('woff2'); }
-@font-face { font-family:'Spectral';        font-weight:400; font-style:normal; font-display:swap; src:url('/fonts/spectral-400.woff2') format('woff2'); }
-@font-face { font-family:'Plex Mono';       font-weight:400; font-style:normal; font-display:swap; src:url('/fonts/plexmono-400.woff2') format('woff2'); }
-@font-face { font-family:'Plex Mono';       font-weight:500; font-style:normal; font-display:swap; src:url('/fonts/plexmono-500.woff2') format('woff2'); }
+@font-face { font-family:'Archivo';         font-weight:100 900; font-style:normal; font-display:swap; src:url('../fonts/archivo-var.woff2') format('woff2'); }
+@font-face { font-family:'Space Grotesk';   font-weight:300 700; font-style:normal; font-display:swap; src:url('../fonts/spacegrotesk-var.woff2') format('woff2'); }
+@font-face { font-family:'Sora';            font-weight:100 800; font-style:normal; font-display:swap; src:url('../fonts/sora-var.woff2') format('woff2'); }
+@font-face { font-family:'Instrument Sans'; font-weight:400 700; font-style:normal; font-display:swap; src:url('../fonts/instrumentsans-var.woff2') format('woff2'); }
+@font-face { font-family:'Newsreader';      font-weight:200 800; font-style:normal; font-display:swap; src:url('../fonts/newsreader-var.woff2') format('woff2'); }
+@font-face { font-family:'Cormorant';       font-weight:300 700; font-style:normal; font-display:swap; src:url('../fonts/cormorant-var.woff2') format('woff2'); }
+@font-face { font-family:'Spectral';        font-weight:300; font-style:normal; font-display:swap; src:url('../fonts/spectral-300.woff2') format('woff2'); }
+@font-face { font-family:'Spectral';        font-weight:400; font-style:normal; font-display:swap; src:url('../fonts/spectral-400.woff2') format('woff2'); }
+@font-face { font-family:'Plex Mono';       font-weight:400; font-style:normal; font-display:swap; src:url('../fonts/plexmono-400.woff2') format('woff2'); }
+@font-face { font-family:'Plex Mono';       font-weight:500; font-style:normal; font-display:swap; src:url('../fonts/plexmono-500.woff2') format('woff2'); }
 
 /* ---- defaults a page may override ---- */
 :root {

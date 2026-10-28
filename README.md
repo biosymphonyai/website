@@ -12,9 +12,9 @@ Then open http://localhost:8000.
 
 ## Deployment
 
-Deployed as a GitHub Pages site: pushes to `main` trigger `.github/workflows/deploy-pages.yml`, which publishes the repository root via GitHub Actions (no build step). A `.nojekyll` file keeps Pages from running Jekyll, and asset paths are relative so the page works both under a project-page URL and at a custom domain root.
+Deployed as a GitHub Pages site: pushes to `main` trigger `.github/workflows/deploy-pages.yml`, which checks the site and publishes only its static files via GitHub Actions (no application build). A `.nojekyll` file keeps Pages from running Jekyll, and asset paths are relative so the page works both under a project-page URL and at a custom domain root.
 
-The `_headers` file is kept for Cloudflare Pages compatibility (no build command, output directory `/`); GitHub Pages ignores it — including the `X-Robots-Tag` on `/demo/*`, so the demo pages rely on their per-page `noindex` meta tag and on `robots.txt`.
+The `_headers` file is kept for Cloudflare Pages compatibility (no build command, output directory `/`); GitHub Pages ignores it — including the `X-Robots-Tag` on `/demo/*`. The demo pages use per-page `noindex` tags; `robots.txt` allows crawling so search engines can read them. The pages remain public.
 
 ## Design studies
 
@@ -45,3 +45,5 @@ slow drags, and gestures starting within 32px of a screen edge (the OS back gest
 Pages are committed as plain static HTML — edit them directly. The shared scaffold is
 `demo/demo.css`; each page's palette and type tokens live in its own inline `<style>`.
 All typefaces are self-hosted in `/fonts`; the site still makes zero external requests.
+
+[Development guide](AGENTS.md): setup, checks, and repository conventions.
