@@ -1,2 +1,6 @@
 .DS_Store
 .gstack/
+
+# Personal agent settings stay on this machine.
+CLAUDE.local.md
+.claude/settings.local.json
