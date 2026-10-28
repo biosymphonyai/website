@@ -30,7 +30,7 @@ Keep changes focused and use a feature branch. Do not deploy, publish data, or r
 bash scripts/check.sh
 ```
 
-Run a single Python test with `python -m pytest path/to/test.py` where pytest is used.
+Run the link checks alone with `python3 -m unittest discover -s tests -v`.
 The check script is the source of truth for routine validation. CI calls it on pull requests and main-branch pushes.
 `CLAUDE.md` imports this file. The Claude Code Stop hook also runs it when the checkout has local changes;
 it allows one follow-up to correct a failure rather than creating an endless loop. Install the documented tools first.
